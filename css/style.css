@@ -464,13 +464,14 @@ table tbody tr:nth-child(2n + 1) {
 }
 table td {
   padding: 0.75em 0.75em;
+  text-align: center;
 }
 table th {
   color: #474747;
   font-size: 0.9em;
   font-weight: 700;
-  padding: 0 0.75em 0.75em 0.75em;
-  text-align: left;
+  padding: 0.75em 0.75em 0.75em 0.75em;
+  text-align: center;
 }
 table thead {
   border-bottom: solid 2px rgba(144, 144, 144, 0.25);
@@ -727,12 +728,16 @@ body.landing #header nav a {
 /* Banner */
 
 #banner {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/hero-bg-01.jpg);
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-position: center center;
   background-size: cover;
   color: #ffffff;
   padding: 14em 0em 14em;
   text-align: center;
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+
 
 }
 #banner:last-child {
@@ -925,7 +930,8 @@ tr:nth-of-type(odd) {
 	}
 
 th { 
-	background: #3498db; 
+	background: white;
+  border: 1px solid #ccc; 
 	color: white; 
 	font-weight: bold; 
 	}
@@ -962,7 +968,11 @@ only screen and (max-width: 760px),
 		left: -9999px;
 	}
 	
-	tr { border: 1px solid #ccc; }
+	tr { 
+    border: 1px solid #ccc; 
+    position: relative;
+    padding-left: 50%;
+  }
 	
 	td { 
 		/* Behave  like a "row" */
@@ -988,4 +998,134 @@ only screen and (max-width: 760px),
 		font-weight: bold;
 	}
 
+}
+
+.link-boxes {
+	width: 100%;
+  height: 100%;
+  height: 25vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          -webkit-align-items: stretch;
+          align-items: stretch;
+  font-family: "Montserrat";
+  font-weight: 200;
+  margin: auto;
+  border: 3px solid green;
+  padding: 10px;
+}
+
+.box1,
+.box2,
+.box3 {
+  -ms-flex-preferred-size: 33.33%;
+      -webkit-flex-basis: 33.33%;
+          flex-basis: 33.33%;
+  -webkit-transition: 0.5s flex-basis cubic-bezier(0.23, 1, 0.32, 1);
+  -o-transition: 0.5s flex-basis cubic-bezier(0.23, 1, 0.32, 1);
+  transition: 0.5s flex-basis cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          -webkit-justify-content: flex-end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          -webkit-align-items: center;
+          align-items: center;
+  background-position: center;
+	-webkit-background-size: cover;
+	        background-size: cover
+}
+
+.box1:hover,
+.box2:hover,
+.box3:hover {
+  -ms-flex-preferred-size: 50%;
+      -webkit-flex-basis: 50%;
+          flex-basis: 50%;
+}
+
+.box1:after,
+.box2:after,
+.box3:after {
+  content: "";
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-transition: 0.5s background-color cubic-bezier(0.23, 1, 0.32, 1);
+  -o-transition: 0.5s background-color cubic-bezier(0.23, 1, 0.32, 1);
+  transition: 0.5s background-color cubic-bezier(0.23, 1, 0.32, 1);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
+  font-size: 4em;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  color: white;
+}
+
+.box1:after {
+  content: "Mock Exams";
+}
+
+.box2:after {
+  content: "Problems";
+}
+
+.box3:after {
+  content: "Past Lectures";
+}
+
+.box1:hover:after,
+.box2:hover:after,
+.box3:hover:after {
+  opacity: 1;
+}
+
+.box1:hover:after,
+.box2:hover:after,
+.box3:hover:after {
+  background: none;
+}
+
+
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
