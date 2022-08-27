@@ -1096,11 +1096,11 @@ only screen and (max-width: 760px),
 }
 
 .box2:after {
-  content: "Problems";
+  content: "Past Lectures";
 }
 
 .box3:after {
-  content: "Past Lectures";
+  content: "Problem Sets";
 }
 
 .box1:hover:after,
